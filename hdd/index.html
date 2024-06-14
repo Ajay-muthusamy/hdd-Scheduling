@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDD Scheduling Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cal-container {
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            flex: 1;
+        }
+
+        .cal-container h1 {
+            text-align: center;
+        }
+
+        .cal-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cal-container label {
+            margin: 10px 0 5px;
+        }
+
+        .cal-container input {
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+      button {
+            display: block;
+            width: 40%;
+            padding: 10px;
+            background-color: #6a6dff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cal-container button:hover {
+            background-color: #45a049;
+        }
+
+        .images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+        .images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .result-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cal-container" style="display: flex;flex-direction: column; justify-content: center; margin-top: 20vh;">
+            <h1>HDD Scheduling</h1>
+            <form id="schedulerForm">
+                <label for="queue">Disk Request Queue (comma separated):</label>
+                <input type="text" id="queue" name="queue" required>
+
+                <label for="head">Initial Head Position:</label>
+                <input type="number" id="head" name="head" required>
+
+                <button type="submit">Simulate</button>
+            </form>
+        </div>
+        <div class="images">
+            <img src="https://st2.depositphotos.com/6809168/10709/v/950/depositphotos_107093536-stock-illustration-calculation-isometric-vector.jpg" alt="HDD Scheduling Image">
+        </div>
+    </div>
+    <div id="results"></div>
+    <script>
+        if (!localStorage.getItem('loggedIn')) {
+            // window.location.href = 'loginpage.html';
+        }
+
+        document.getElementById('schedulerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
